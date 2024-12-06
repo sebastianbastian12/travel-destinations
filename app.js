@@ -6,6 +6,7 @@ const swaggerUi = require('swagger-ui-express');
 const PORT = process.env.PORT || 3012;
 const mongodbDestinations = require('./data/database.destinations');
 const mongodbAirlines = require('./data/database.airlines');
+
 const swaggerMainFile = require('./swagger.json');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerMainFile));
@@ -25,6 +26,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/', require('./routes/index'));
+app.use('/destinations', require('./routes/destinations.r'));
+app.use('/airlines', require('./routes/airlines.r'));
 
 const initializeDatabases = async () => {
   try {
