@@ -8,8 +8,7 @@
   "host": "localhost:3012",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "http"
   ],
   "paths": {
     "/airlines/": {
