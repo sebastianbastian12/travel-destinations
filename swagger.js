@@ -6,7 +6,7 @@ const doc = {
     description: 'API interface documentation for Travel Destination Site',
     version: '1.0.0',
   },
-  host: 'localhost:3012/airlines',
+  host: 'localhost:3012/',
   schemes: ['http', 'https'],
 };
 
