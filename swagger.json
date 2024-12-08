@@ -5,7 +5,7 @@
     "description": "API interface documentation for Travel Destination Site",
     "version": "1.0.0"
   },
-  "host": "travel-destinations.onrender.com",
+  "host": "localhost:3012/api-docs",
   "basePath": "/",
   "schemes": [
     "http",
