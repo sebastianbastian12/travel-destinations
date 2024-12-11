@@ -21,13 +21,13 @@ const getAllDestinationPlans = async (req, res) => {
 const getSingleDestinationPlan = async (req, res) => {
   //#Swagger.tags=['destinationPlans']
   try {
-    const destinationId = ObjectId.createFromHexString(
-      req.params.destinationId
+    const destinationPlanId = ObjectId.createFromHexString(
+      req.params.destinationPlanId
     );
     const destinationPlan = await mongodb
       .getDatabase()
       .collection('destinationPlans')
-      .findOne({ _id: destinationId });
+      .findOne({ _id: destinationPlanId });
 
     if (destinationPlan) {
       res.setHeader('Content-Type', 'application/json');
@@ -75,8 +75,8 @@ const postDestinationPlan = async (req, res) => {
 const updateDestinationPlan = async (req, res) => {
   //#Swagger.tags=['destinationPlans']
   try {
-    const destinationId = ObjectId.createFromHexString(
-      req.params.destinationId
+    const destinationPlanId = ObjectId.createFromHexString(
+      req.params.destinationPlanId
     );
     const updateDestinationPlanTemplate = {
       Hotel: req.body.Hotel,
@@ -90,7 +90,7 @@ const updateDestinationPlan = async (req, res) => {
     const destinationPlan = await mongodb
       .getDatabase()
       .collection('destinationPlans')
-      .replaceOne({ _id: destinationId }, updateDestinationPlanTemplate);
+      .replaceOne({ _id: destinationPlanId }, updateDestinationPlanTemplate);
 
     if (destinationPlan.modifiedCount > 0) {
       res
@@ -110,13 +110,13 @@ const updateDestinationPlan = async (req, res) => {
 const deleteDestinationPlan = async (req, res) => {
   //#Swagger.tags=['destinationPlans']
   try {
-    const destinationId = ObjectId.createFromHexString(
-      req.params.destinationId
+    const destinationPlanId = ObjectId.createFromHexString(
+      req.params.destinationPlanId
     );
     const destinationPlan = await mongodb
       .getDatabase()
       .collection('destinationPlans')
-      .deleteOne({ _id: destinationId });
+      .deleteOne({ _id: destinationPlanId });
     if (destinationPlan.deletedCount > 0) {
       res
         .status(200)

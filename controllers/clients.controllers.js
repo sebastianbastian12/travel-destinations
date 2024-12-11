@@ -45,7 +45,7 @@ const postClient = async (req, res) => {
     const clientTemplate = {
       Age: req.body.Age,
       Country: req.body.Country,
-      fullName: req.body.fullName,
+      FullName: req.body.FullName,
       Id: req.body.Id,
     };
     const client = await mongodb
@@ -72,7 +72,7 @@ const updateClient = async (req, res) => {
     const updateClientTemplate = {
       Age: req.body.Age,
       Country: req.body.Country,
-      fullName: req.body.fullName,
+      FullName: req.body.FullName,
       Id: req.body.Id,
     };
     const client = await mongodb
