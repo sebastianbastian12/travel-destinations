@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const destinationPlansControllers = require('../controllers/destinationPlans.controllers');
 const {
-  destinationValidatorId,
+  destinationPlanValidatorId,
   createDestinationPlanValidator,
   validate,
 } = require('../validator');
@@ -11,7 +11,7 @@ router.get('/', destinationPlansControllers.getAllDestinationPlans);
 
 router.get(
   '/:destinationPlanId',
-  destinationValidatorId(),
+  destinationPlanValidatorId(),
   validate,
   destinationPlansControllers.getSingleDestinationPlan
 );
@@ -25,7 +25,7 @@ router.post(
 
 router.put(
   '/:destinationPlanId',
-  destinationValidatorId(),
+  destinationPlanValidatorId(),
   createDestinationPlanValidator(),
   validate,
   destinationPlansControllers.updateDestinationPlan
@@ -33,7 +33,7 @@ router.put(
 
 router.delete(
   '/:destinationPlanId',
-  destinationValidatorId(),
+  destinationPlanValidatorId(),
   validate,
   destinationPlansControllers.deleteDestinationPlan
 );

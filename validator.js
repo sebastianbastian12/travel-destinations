@@ -146,7 +146,7 @@ module.exports = {
   createDestinationValidator,
   airlineValidatorId,
   createAirlineValidator,
-  destinationValidatorId,
+  destinationPlanValidatorId,
   createDestinationPlanValidator,
   clientValidatorId,
   createClientValidator,
