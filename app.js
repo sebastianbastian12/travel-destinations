@@ -6,6 +6,8 @@ const swaggerUi = require('swagger-ui-express');
 const PORT = process.env.PORT || 3012;
 const mongodbDestinations = require('./data/database.destinations');
 const mongodbAirlines = require('./data/database.airlines');
+const mongodbDestinationPlans = require('./data/database.destinationPlans');
+const mongodbClients = require('./data/database.clients');
 
 const swaggerMainFile = require('./swagger.json');
 
@@ -46,6 +48,22 @@ const initializeDatabases = async () => {
       });
     });
     console.log('Airlines database initialized');
+
+    await new Promise((resolve, reject) => {
+      mongodbDestinationPlans.initDb((err) => {
+        if (err) reject(err);
+        else resolve();
+      });
+    });
+    console.log('Destination plans database initialized');
+
+    await new Promise((resolve, reject) => {
+      mongodbClients.initDb((err) => {
+        if (err) reject(err);
+        else resolve();
+      });
+    });
+    console.log('Clients database initialized');
   } catch (error) {
     console.error('Error initializing databases', error);
     process.exit(1);

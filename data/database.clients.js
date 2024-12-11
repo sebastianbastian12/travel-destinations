@@ -7,10 +7,10 @@ let database;
 
 const initDb = (callback) => {
   if (database) {
-    console.log('Airlines database is already initialized!');
+    console.log('Clients database is already initialized!');
     return callback(null, database);
   }
-  MongoClient.connect(process.env.MONGODB_URL_AIRLINES)
+  MongoClient.connect(process.env.MONGODB_URL_CLIENTS)
     .then((client) => {
       database = client.db();
       callback(null, database);
