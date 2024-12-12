@@ -37,10 +37,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-/*app.get('/', (req, res) => {
-  res.send('Welcome to the Travel Destinations || API');
-});*/
-
 app.use('/', require('./routes/index'));
 
 passport.use(
