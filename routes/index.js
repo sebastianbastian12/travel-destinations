@@ -8,7 +8,7 @@ router.use('/destinations', require('./destinations.r'));
 router.use('/destinationPlans', require('./destinationPlans.r'));
 router.use('/clients', require('./clients.r'));
 
-//oAuth log in & log out
+/*//oAuth log in & log out
 router.get('/login', passport.authenticate('github'), (req, res) => {});
 
 router.get('/logout', function (req, res, next) {
@@ -18,6 +18,6 @@ router.get('/logout', function (req, res, next) {
     }
     res.redirect('/');
   });
-});
+});*/
 
 module.exports = router;
