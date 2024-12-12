@@ -16,13 +16,7 @@ const swaggerMainFile = require('./swagger.json');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerMainFile));
 
-app.use(
-  cors({
-    origin: 'http://localhost:3012',
-    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
