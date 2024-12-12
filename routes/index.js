@@ -1,8 +1,7 @@
+const passport = require('passport');
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
 
-//Calling all the routes
 router.use('/airlines', require('./airlines.r'));
 router.use('/destinations', require('./destinations.r'));
 router.use('/destinationPlans', require('./destinationPlans.r'));
