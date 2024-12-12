@@ -7,6 +7,8 @@ const {
   validate,
 } = require('../validator');
 
+const { isAuthenticated } = require('../authenticate');
+
 router.get('/', airlinesControllers.getAllAirlines);
 
 router.get(
@@ -18,6 +20,7 @@ router.get(
 
 router.post(
   '/',
+  isAuthenticated,
   createAirlineValidator(),
   validate,
   airlinesControllers.postAirline
@@ -25,6 +28,7 @@ router.post(
 
 router.put(
   '/:airlineId',
+  isAuthenticated,
   airlineValidatorId(),
   createAirlineValidator(),
   validate,
@@ -33,6 +37,7 @@ router.put(
 
 router.delete(
   '/:airlineId',
+  isAuthenticated,
   airlineValidatorId(),
   validate,
   airlinesControllers.deleteAirline

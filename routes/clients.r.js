@@ -7,6 +7,8 @@ const {
   validate,
 } = require('../validator');
 
+const { isAuthenticated } = require('../authenticate');
+
 router.get('/', clientsControllers.getAllClients);
 
 router.get(
@@ -18,6 +20,7 @@ router.get(
 
 router.post(
   '/',
+  isAuthenticated,
   createClientValidator(),
   validate,
   clientsControllers.postClient
@@ -25,6 +28,7 @@ router.post(
 
 router.put(
   '/:clientId',
+  isAuthenticated,
   clientValidatorId(),
   createClientValidator(),
   validate,
@@ -33,6 +37,7 @@ router.put(
 
 router.delete(
   '/:clientId',
+  isAuthenticated,
   clientValidatorId(),
   validate,
   clientsControllers.deleteClient
