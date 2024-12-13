@@ -120,3 +120,5 @@ initializeDatabases().then(() => {
     console.log(`Web server working on port || ${PORT}`);
   });
 });
+
+module.exports = app;
