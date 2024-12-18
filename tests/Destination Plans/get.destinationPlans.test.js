@@ -10,9 +10,9 @@ beforeAll(async () => {
         else resolve();
       });
     });
-    console.log('example');
+    console.log('Destinations database initialized');
   } catch (error) {
-    console.log('error during execution');
+    console.log('Error during execution');
   }
 });
 
