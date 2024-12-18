@@ -84,7 +84,7 @@ const initializeDatabases = async () => {
         else resolve();
       });
     });
-    console.log('Destinations database initialized');
+    //console.log('Destinations database initialized');
 
     await new Promise((resolve, reject) => {
       mongodbAirlines.initDb((err) => {
@@ -92,7 +92,7 @@ const initializeDatabases = async () => {
         else resolve();
       });
     });
-    console.log('Airlines database initialized');
+    //console.log('Airlines database initialized');
 
     await new Promise((resolve, reject) => {
       mongodbDestinationPlans.initDb((err) => {
@@ -100,7 +100,7 @@ const initializeDatabases = async () => {
         else resolve();
       });
     });
-    console.log('Destination plans database initialized');
+    //console.log('Destination plans database initialized');
 
     await new Promise((resolve, reject) => {
       mongodbClients.initDb((err) => {
@@ -108,7 +108,7 @@ const initializeDatabases = async () => {
         else resolve();
       });
     });
-    console.log('Clients database initialized');
+    //console.log('Clients database initialized');
   } catch (error) {
     console.error('Error initializing databases', error);
     process.exit(1);
