@@ -3,17 +3,12 @@ const app = require('../../app');
 const db = require('../../data/database.destinationPlans');
 
 beforeAll(async () => {
-  try {
-    await new Promise((resolve, reject) => {
-      db.initDb((err) => {
-        if (err) reject(err);
-        else resolve();
-      });
+  await new Promise((resolve, reject) => {
+    db.initDb((err) => {
+      if (err) reject(err);
+      else resolve();
     });
-    console.log('Destinations database initialized');
-  } catch (error) {
-    console.log('Error during execution');
-  }
+  });
 });
 
 describe('GET /destinationPlans', () => {
